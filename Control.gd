@@ -1,6 +1,7 @@
 extends Control
 var cookie_sprite = preload("res://Sprite.tscn")
 var cookies= 1
+var cookie_lvl=1
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -14,13 +15,26 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
-#	pass
+	pass
 
 
 func _on_Button_pressed():
 	
 	var cookie=cookie_sprite.instance()
 	add_child(cookie)
-	cookies+=1
-	$Label.text=str(cookies)
+	cookies+=cookie_lvl
+	update_cookies()
 	pass # Replace with function body.
+	
+
+
+func _on_Button2_pressed():if cookies>=lvlup_coast(cookie_lvl):
+	cookies-=lvlup_coast(cookie_lvl)
+	cookie_lvl+=1
+	update_cookies()
+	$Button2.text="coast: "+str(lvlup_coast(cookie_lvl)) 
+func update_cookies():
+	$Label.text=str(cookies)
+func lvlup_coast(lvl):
+	return pow(2,lvl)*25
+

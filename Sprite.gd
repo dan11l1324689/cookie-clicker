@@ -16,3 +16,4 @@ func _ready():
 func _process(delta):
 	transform.origin+=Vector2(0,100)*delta
 	rotation+=10.00*delta
+  
