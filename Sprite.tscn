@@ -4,7 +4,7 @@
 [ext_resource path="res://cookie.png" type="Texture" id=2]
 
 [node name="Sprite" type="Sprite"]
-position = Vector2( 255.676, -75.799 )
-scale = Vector2( 0.743961, 0.265502 )
+position = Vector2( 504.676, 118.04 )
+scale = Vector2( 1.19619, 0.291528 )
 texture = ExtResource( 2 )
 script = ExtResource( 1 )

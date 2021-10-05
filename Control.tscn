@@ -64,11 +64,19 @@ __meta__ = {
 }
 
 [node name="butter" type="Button" parent="Control"]
-margin_left = 150.0
-margin_top = 294.0
-margin_right = 253.0
-margin_bottom = 405.0
-text = "new skin"
+margin_left = 34.6303
+margin_top = 246.054
+margin_right = 137.63
+margin_bottom = 357.054
+text = "lvl bot"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Control/butter" to="." method="_on_butter_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Button_pressed"]

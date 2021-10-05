@@ -2,6 +2,7 @@ extends Control
 var cookie_sprite = preload("res://Sprite.tscn")
 var cookies= 1
 var cookie_lvl=1
+var autoclick_lvl=0
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -38,3 +39,11 @@ func update_cookies():
 func lvlup_coast(lvl):
 	return pow(2,lvl)*25
 
+
+
+func _on_butter_pressed():if cookies>=lvlup_coast(autoclick_lvl):
+	cookies-=lvlup_coast(autoclick_lvl)
+	autoclick_lvl+=1
+	update_cookies()
+	$Button2.text="coast: "+str(lvlup_coast(autoclick_lvl)) 
+	pass # Replace with function body.
