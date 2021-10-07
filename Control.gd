@@ -41,9 +41,10 @@ func lvlup_coast(lvl):
 
 
 
-func _on_butter_pressed():if cookies>=lvlup_coast(autoclick_lvl):
+func _on_butter_pressed():if cookies>=lvlup_coast(autoclick_lvl)and autoclick_lvl<60:
 	cookies-=lvlup_coast(autoclick_lvl)
 	autoclick_lvl+=1
 	update_cookies()
-	$Button2.text="coast: "+str(lvlup_coast(autoclick_lvl)) 
+	$Control/butter.text="coast: "+str(lvlup_coast(autoclick_lvl)) 
+	$Timer.start(1/autoclick_lvl)
 	pass # Replace with function body.
